@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  },
+  "dependencies": {
+    "eslint": "^8.11.0"
+  },
+  "version": "0.0.0"
+}
