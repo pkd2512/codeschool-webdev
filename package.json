@@ -16,12 +16,14 @@
     "build": "parcel build"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "2.3.2",
     "eslint": "^8.11.0",
     "eslint-config-google": "^0.14.0",
     "parcel": "^2.3.2",
     "stylelint-config-standard": "^25.0.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.4",
     "bootstrap": "^5.1.3"
   }
 }
