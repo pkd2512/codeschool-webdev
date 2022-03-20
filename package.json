@@ -3,10 +3,20 @@
   "source": [
     "src/index.html"
   ],
+  "targets": {
+    "default": {
+      "distDir": "./docs",
+      "publicUrl": "./",
+      "sourceMap": {
+        "inline": true,
+        "sourceRoot": "./"
+      }
+    }
+  },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel serve --open",
-    "build": "parcel build --dist-dir docs --public-url ./"
+    "build": "parcel build"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
