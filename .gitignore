@@ -105,3 +105,4 @@ dist
 
 # Temporary files
 .DS_Store
+.parcel-cache
