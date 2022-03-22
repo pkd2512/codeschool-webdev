@@ -1,7 +1,7 @@
 {
   "name": "codeschool-webdev",
   "source": [
-    "src/index.html"
+    "src/index.ejs"
   ],
   "targets": {
     "default": {
@@ -20,6 +20,7 @@
     "eslint": "^8.11.0",
     "eslint-config-google": "^0.14.0",
     "parcel": "^2.3.2",
+    "parcel-transformer-ejs": "^0.2.0",
     "stylelint-config-standard": "^25.0.0"
   },
   "dependencies": {
