@@ -1176,6 +1176,11 @@ electron-to-chromium@^1.4.84:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.88.tgz#ebe6a2573b563680c7a7bf3a51b9e465c9c501db"
   integrity sha512-oA7mzccefkvTNi9u7DXmT0LqvhnOiN2BhSrKerta7HeUC1cLoIwtbf2wL+Ah2ozh5KQd3/1njrGrwDBXx6d14Q==
 
+enter-view@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/enter-view/-/enter-view-2.0.1.tgz#d7ae6e93cccfd72548c7b2fb41c93224c5b57d80"
+  integrity sha512-/+oieMLxMI793kCTFG2vEgtGcjUqNyneBerhF+40ZVG8RtwGgWTDoC3RGfW5dKO6aacIKIgV4xqAp6bpjoRvjA==
+
 entities@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"

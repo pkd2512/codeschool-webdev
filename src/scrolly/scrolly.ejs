@@ -1,0 +1,180 @@
+<!--  
+  ------------------
+  SCROLLY DATA BLOCK
+  ------------------
+  This is in an array notation to keep it easier to maintain. 
+-->
+
+<!-- 
+  To make a slide with no annotation text, 
+  use _blank-slide_ as the anno text 
+-->
+
+<!-- ID of the scrolly -->
+<% const scrollerEl = id %> 
+
+<!-- Height of the scrolly annotation segments -->
+<% const annoHeight = "100vh" %> 
+
+<!-- List of background slides -->
+<% const scrollBlocks = 
+[
+  {
+  "filename": "doge_1",
+  "anno": "The dogefather"
+  },
+  {
+  "filename": "doge_2",
+  "anno": "Such doge Much wow"
+  }
+]
+%>
+
+
+<!--  
+  ---------------------
+  SCROLLY TEMPATE BLOCK
+  ---------------------
+-->
+
+<!-- Enter trigger -->
+<div class="scroll-enter"></div>
+
+<!-- Scrolly blocks -->
+<div class= <%= scrollerEl + "-scroll-wrapper" %>>
+
+  <!-- graphic slides -->
+  <div class="scroll-background container-fluid">
+    <div class="row scroll-row align-items-center">
+    <!-- 
+      Use the row classes to stick the slides to top, bottom or center
+      align-items-start, -center, -end 
+    -->
+        <% scrollBlocks.forEach(function(block,i){ %>
+          <div class="col-12 px-0 slide block-<%= i %>">
+            <%- include( '../ai2html-output/'+block.filename+'.ejs' ); %>
+          </div>
+        <% }) %>
+
+    </div>
+  </div>
+
+  <!-- annotation blocks -->
+  <div class="scroll-foreground container">
+
+    <% scrollBlocks.forEach(function(block,i){ %>
+      <div class="anno-block row align-items-center" id="block-<%= i %>" >
+
+        <% if(block.anno!=='_blank-slide_') { %>
+          <div class="annotation col-6 mx-auto">
+            <p><%= block.anno %></p>
+          </div>
+        <% } else { %>
+          <div class="annotation"></div>
+        <% } %>
+
+      </div>
+    <% }) %>
+
+    </div>
+</div>
+
+<!-- Exit trigger -->
+<div class="scroll-exit"></div>
+
+
+<!-- 
+  ------------------
+  MAIN SCROLLY STYLE 
+  ------------------
+  #scrolly-element
+  - scroll-wrapper (positioned relative to the page)
+  -- fixed-container (position fixed inside the wrapper)
+  --- scroll-row (contains the slides)
+  ---- slide (bootstrap column which contains the ai2html/chart)
+  -- scroll-sections (the sections to scroll through)
+  --- anno-block (every anno block to contain the anno)
+  ---- annotation
+-->
+
+<style>
+  .<%= scrollerEl + "-scroll-wrapper" %> {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background.fixed {
+    position: fixed;
+    top: 0;
+    bottom: unset;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background.unfixed {
+    position: absolute;
+    top: unset;
+    bottom: 0;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background .scroll-row {
+    height: 100vh;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background .scroll-row .slide{
+    transition: opacity 0.3s ease-out;
+    position: absolute;
+    opacity: 0;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background .scroll-row .slide.active{
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+  }
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background .scroll-row .slide:first-child{
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+  }
+
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-foreground{
+    padding-top: 100vh;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-foreground .anno-block{
+    height: <%= annoHeight %>;
+
+    pointer-events: none;
+    position: relative;
+    z-index: 0;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-foreground .anno-block:not(:last-child){
+    margin-bottom: 50vh;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-foreground .anno-block .annotation{
+    pointer-events: all;
+    max-width: 576px;
+
+    border: 1px solid rgba(125, 96, 76, 0.95);
+    border-radius: 10px;
+    text-align: left;
+    color: black;
+    font-weight: 500;
+    margin: 0 auto 30px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 1rem 1.5rem 1.5rem;
+    height: fit-content;
+  }
+
+  .<%= scrollerEl + "-scroll-wrapper" %> .scroll-foreground .anno-block .annotation p{
+    margin-bottom: 0;
+  }
+
+</style>
