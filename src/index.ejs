@@ -99,8 +99,15 @@
       </section>
 
       <!-- ai2html -->
-      <section>
-        <%- include('./ai2html-output/ai2html.ejs'); %>
+      <section class="ai2html">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <!-- This is the line that matters for import -->
+              <%- include('./ai2html-output/ai2html-test.ejs'); %>
+            </div>
+          </div>
+        </div>
       </section>
     </article>
   </main>
