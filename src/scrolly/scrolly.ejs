@@ -17,18 +17,7 @@
 <% const annoHeight = "100vh" %> 
 
 <!-- List of background slides -->
-<% const scrollBlocks = 
-[
-  {
-  "filename": "doge_1",
-  "anno": "The dogefather"
-  },
-  {
-  "filename": "doge_2",
-  "anno": "Such doge Much wow"
-  }
-]
-%>
+<% const scrollBlocks = blocks %>
 
 
 <!--  
@@ -102,6 +91,7 @@
     display: block;
     position: relative;
     width: 100%;
+    overflow: hidden;
   }
 
   .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background {
@@ -113,6 +103,8 @@
   .<%= scrollerEl + "-scroll-wrapper" %> .scroll-background.fixed {
     position: fixed;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: unset;
   }
 

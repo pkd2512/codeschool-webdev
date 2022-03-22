@@ -1,6 +1,5 @@
-import './scrolly.css';
-
 /* eslint-disable max-len */
+import debounce from 'lodash.debounce';
 import enterView from 'enter-view';
 
 /**
@@ -10,6 +9,11 @@ import enterView from 'enter-view';
  * @param {string} scrollerEl - The HTML id of the scroller block.
  */
 export default enterViewScrolly = (scrollerEl) => {
+  window.addEventListener('resize', debounce(() => {
+    setWidths(scrollerEl);
+  }, 250));
+
+
   /* Enter Trigger */
   enterView({
     selector: `${scrollerEl} .scroll-enter`,
@@ -79,4 +83,16 @@ export default enterViewScrolly = (scrollerEl) => {
           .classList.remove('active');
     },
   });
+};
+
+const setWidths = (scrollerEl) => {
+  // set widths
+  const {width} = document.querySelector(scrollerEl).getBoundingClientRect();
+  // console.log(width);
+
+  document
+      .querySelectorAll(`${scrollerEl} .slide`)
+      .forEach((slide) => {
+        slide.style.width = `${width}px`;
+      });
 };

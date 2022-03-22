@@ -29,7 +29,9 @@
           <div class="row bio">
             <div class="col-8">
               <p class="border-start border-secondary border-3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
               </p>
             </div>
             <div class="col-4">
@@ -80,7 +82,8 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Skills</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
                 </div>
               </div>
             </div>
@@ -89,7 +92,8 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Tools</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
                 </div>
               </div>
             </div>
@@ -103,7 +107,23 @@
 
       <!-- scrolly -->
       <section id="doge-scrolly">
-        <%- include('./scrolly/scrolly.ejs', {id: "doge-scrolly"}); %>
+
+        <!-- define the scroll sections -->
+        <% const blocks=
+          [
+            { 
+              "filename" : "doge_1" , 
+              "anno" : "The dogefather" 
+            }, 
+            { 
+              "filename" : "doge_2" , 
+              "anno": "Such doge Much wow" 
+            }
+          ] 
+        %>
+
+        <!-- include the component -->
+        <%- include('./scrolly/scrolly.ejs', {id: "doge-scrolly" , blocks: blocks }); %>
       </section>
     </article>
   </main>
