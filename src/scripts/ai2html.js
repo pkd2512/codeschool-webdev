@@ -134,15 +134,19 @@ var defaultSettings = {
   // rules for converting AI fonts to CSS
   // rules from external files are merged into this list
   "fonts": [
-    {"aifont":"ArialMT","family":"arial,helvetica,sans-serif","weight":"","style":""},
-    {"aifont":"Arial-BoldMT","family":"arial,helvetica,sans-serif","weight":"bold","style":""},
-    {"aifont":"Arial-ItalicMT","family":"arial,helvetica,sans-serif","weight":"","style":"italic"},
-    {"aifont":"Arial-BoldItalicMT","family":"arial,helvetica,sans-serif","weight":"bold","style":"italic"},
-    {"aifont":"Georgia","family":"georgia,'times new roman',times,serif","weight":"","style":""},
-    {"aifont":"Georgia-Bold","family":"georgia,'times new roman',times,serif","weight":"bold","style":""},
-    {"aifont":"Georgia-Italic","family":"georgia,'times new roman',times,serif","weight":"","style":"italic"},
-    {"aifont":"Georgia-BoldItalic","family":"georgia,'times new roman',times,serif","weight":"bold","style":"italic"}
+    {"aifont":"SourceSerifPro-Bold","family":"Source Serif Pro Bold,serif","weight":"700","style":""},
+    {"aifont":"SourceSansPro-Black","family":"Source Sans Pro Black,serif","weight":"900","style":""}
   ],
+  // "fonts": [
+  //   {"aifont":"ArialMT","family":"arial,helvetica,sans-serif","weight":"","style":""},
+  //   {"aifont":"Arial-BoldMT","family":"arial,helvetica,sans-serif","weight":"bold","style":""},
+  //   {"aifont":"Arial-ItalicMT","family":"arial,helvetica,sans-serif","weight":"","style":"italic"},
+  //   {"aifont":"Arial-BoldItalicMT","family":"arial,helvetica,sans-serif","weight":"bold","style":"italic"},
+  //   {"aifont":"Georgia","family":"georgia,'times new roman',times,serif","weight":"","style":""},
+  //   {"aifont":"Georgia-Bold","family":"georgia,'times new roman',times,serif","weight":"bold","style":""},
+  //   {"aifont":"Georgia-Italic","family":"georgia,'times new roman',times,serif","weight":"","style":"italic"},
+  //   {"aifont":"Georgia-BoldItalic","family":"georgia,'times new roman',times,serif","weight":"bold","style":"italic"}
+  // ],
 
   // Width ranges for responsive breakpoints (obsolete, will be removed)
   "breakpoints": [
