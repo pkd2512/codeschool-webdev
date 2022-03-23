@@ -13,17 +13,3 @@ body {
   font-family: 'Source Serif Pro', serif;
 }
 
-.container {
-  max-width: 768px;
-}
-
-section.intro {
-  margin-top: 15rem;
-}
-
-
-@media (max-width:400px) {
-  .col-6 {
-    width: 100%;
-  }
-}

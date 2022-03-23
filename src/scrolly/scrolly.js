@@ -7,11 +7,18 @@ import enterView from 'enter-view';
   VERICAL SCROLLY
   ---------------
  * @param {string} scrollerEl - The HTML id of the scroller block.
+ * @param {boolean} stacked - If true, the graphics layers will stack on scroll.
  */
-export default enterViewScrolly = (scrollerEl) => {
+export default enterViewScrolly = (scrollerEl, stacked) => {
+  // set the sizes onload and on resize
+
+  window.addEventListener('DOMContentLoaded', debounce(() => {
+    _resize(scrollerEl);
+  }, 150));
+
   window.addEventListener('resize', debounce(() => {
-    setWidths(scrollerEl);
-  }, 250));
+    _resize(scrollerEl);
+  }, 150));
 
 
   /* Enter Trigger */
@@ -64,7 +71,7 @@ export default enterViewScrolly = (scrollerEl) => {
   enterView({
     selector: `${scrollerEl} .anno-block`,
     enter: (el) => {
-      document
+      (!stacked) && document
           .querySelectorAll(`${scrollerEl} .slide`)
           .forEach((slide) => slide.classList.remove('active'));
 
@@ -77,22 +84,32 @@ export default enterViewScrolly = (scrollerEl) => {
           .previousElementSibling;
       if (prevNode) {
         prevNode.classList.add('active');
+
+        document
+            .querySelector(`${scrollerEl} .slide.${el.id}`)
+            .classList.remove('active');
       }
-      document
-          .querySelector(`${scrollerEl} .slide.${el.id}`)
-          .classList.remove('active');
     },
   });
 };
 
-const setWidths = (scrollerEl) => {
+const _resize = (scrollerEl) => {
   // set widths
   const {width} = document.querySelector(scrollerEl).getBoundingClientRect();
-  // console.log(width);
+
+  // set heights
+  const height = window.innerHeight;
+  console.log(height);
 
   document
       .querySelectorAll(`${scrollerEl} .slide`)
       .forEach((slide) => {
         slide.style.width = `${width}px`;
       });
+
+  document
+      .querySelector(`${scrollerEl} .scroll-background `).style.height = `${height}px`;
+
+  document
+      .querySelector(`${scrollerEl} .scroll-row`).style.height = `${height}px`;
 };

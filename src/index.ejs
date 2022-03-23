@@ -16,94 +16,21 @@
 <body>
   <main>
     <article>
-      <section class="intro">
-        <div class="container">
-          <div class="row logo">
-            <div class="col-12"></div>
-          </div>
-          <div class="row title">
-            <div class="col-12">
-              <h1 class="display-2">Prasanta Kumar Dutta</h1>
-            </div>
-          </div>
-          <div class="row bio">
-            <div class="col-8">
-              <p class="border-start border-secondary border-3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book.
-              </p>
-            </div>
-            <div class="col-4">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">🎐 An item</li>
-                <li class="list-group-item">🎐 A second item</li>
-                <li class="list-group-item">🎐 A third item</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
+      <div class="w-100 py-5 my-5"></div>
 
-      <section class="jobs">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-12">
-              <h2 class="display-5 border-bottom border-1 pb-2">Places I worked at</h2>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-12">
-              <h5 class="fw-bold">Company Name</h5>
-              <div><span class="badge rounded-pill bg-secondary">Jan 2019 - Present</span></div>
-            </div>
-            <div class="col-12">
-              <ul class="list-unstyled">
-                <li class="">An item</li>
-                <li class="">A second item</li>
-                <li class="">A third item</li>
-                <li class="">A fourth item</li>
-                <li class="">And a fifth one</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="info-cards">
+      <section>
         <div class="container">
           <div class="row">
-
-            <div class="col-12 col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Skills</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-              </div>
+            <div class="col-12">
+              <h1 class="display-2"> Scrolly Demo </h1>
+              <a href="https://prasantakrdutta.notion.site/Scrollytelling-2139c5d26b8043169c2ac5af9798c12a" target="_blank" class="btn btn-primary lead fw-bold">Read the docs</a>
             </div>
-
-            <div class="col-12 col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tools</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
       <div class="w-100 my-5"></div>
-
 
       <!-- scrolly -->
       <section id="doge-scrolly">
@@ -113,18 +40,27 @@
           [
             { 
               "filename" : "doge_1" , 
-              "anno" : "The dogefather" 
+              "anno" : "_blank-slide_" 
             }, 
             { 
               "filename" : "doge_2" , 
-              "anno": "Such doge Much wow" 
+              "anno": "The Dogefather"
+            },
+            { 
+              "filename" : "doge_3" , 
+              "anno": "<div class='h5 fw-bold'> Doge Title </div> Much Doge Such Wow"  
             }
           ] 
         %>
+        <!-- every { filename, anno } object makes a new section -->
 
         <!-- include the component -->
         <%- include('./scrolly/scrolly.ejs', {id: "doge-scrolly" , blocks: blocks }); %>
+        
       </section>
+
+      <div class="w-100 py-5 my-5"></div>
+
     </article>
   </main>
 </body>
