@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import debounce from 'lodash.debounce';
 import enterView from 'enter-view';
-
 /**
   ---------------
   VERICAL SCROLLY
@@ -99,7 +98,7 @@ const _resize = (scrollerEl) => {
 
   // set heights
   const height = window.innerHeight;
-  console.log(height);
+  // console.log(height);
 
   document
       .querySelectorAll(`${scrollerEl} .slide`)

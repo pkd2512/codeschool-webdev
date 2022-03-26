@@ -7,10 +7,11 @@
     "default": {
       "distDir": "./docs",
       "publicUrl": "./",
-      "sourceMap": false
+      "context": "browser",
+      "outputFormat":  "global",
+      "sourceMap": true
     }
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel serve --open",
     "build": "parcel build"
