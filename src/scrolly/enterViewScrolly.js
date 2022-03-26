@@ -8,7 +8,7 @@ import enterView from 'enter-view';
  * @param {string} scrollerEl - The HTML id of the scroller block.
  * @param {boolean} stacked - If true, the graphics layers will stack on scroll.
  */
-export default enterViewScrolly = (scrollerEl, stacked) => {
+const enterViewScrolly = (scrollerEl, stacked) => {
   // set the sizes onload and on resize
 
   window.addEventListener('DOMContentLoaded', debounce(() => {
@@ -112,3 +112,5 @@ const _resize = (scrollerEl) => {
   document
       .querySelector(`${scrollerEl} .scroll-row`).style.height = `${height}px`;
 };
+
+export default enterViewScrolly;
